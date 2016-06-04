@@ -16,5 +16,23 @@
 
 package com.github.gregwhitaker.eventsub;
 
+import java.net.InetSocketAddress;
+
 public class Subscriber {
+    private final String name;
+    private final InetSocketAddress remoteAddress;
+
+    public static void main(String... args) {
+        Subscriber subscriber = new Subscriber(args[0], new InetSocketAddress("localhost", 8080));
+        subscriber.start();
+    }
+
+    public Subscriber(String name, InetSocketAddress remoteAddress) {
+        this.name = name;
+        this.remoteAddress = remoteAddress;
+    }
+
+    public void start() {
+
+    }
 }

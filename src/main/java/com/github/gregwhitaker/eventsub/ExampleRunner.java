@@ -16,5 +16,22 @@
 
 package com.github.gregwhitaker.eventsub;
 
+/**
+ * Runs the reactivesocket event subscription example.
+ */
 public class ExampleRunner {
+
+    /**
+     * Main entry-point for this example.  This starts the server and two event subscribers.
+     *
+     * @param args command line arguments
+     * @throws Exception
+     */
+    public static void main(String... args) throws Exception {
+        Server.main();
+        Subscriber.main("Subscriber1");
+        Subscriber.main("Subscriber2");
+
+        Thread.currentThread().join();
+    }
 }
